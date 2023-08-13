@@ -1,0 +1,51 @@
+stud.css body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: rgb(49, 145, 201);
+}
+body {
+  background-color: rgb(209, 228, 228);
+}
+.mark {
+  display: flex;
+  place-items: center;
+}
+.container {
+  display: flex;
+  place-content: center;
+  padding-top: 10vh;
+}
+.cont-button {
+  display: flex;
+  place-content: center;
+  padding-top: 2vh;
+}
+button {
+  font-family: Verdana;
+  font-weight: bolder;
+  background-color: #f4d03f;
+  padding: 5px;
+  border-radius: 15px;
+}
+.form {
+  padding-top: 2vh;
+  padding-left: 2vh;
+  padding-right: 10vh;
+  padding-bottom: 10vh;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  width: 60%;
+  place-content: center;
+}
+.enter {
+  padding-left: 40px;
+}
+input,
+select {
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+}
+label {
+  padding: 10px;
+}

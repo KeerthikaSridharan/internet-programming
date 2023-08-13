@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+body {
+  font-family: Poppins;
+  background-image: linear-gradient(#f44f4f, #f6c8c8, #fbf0f0, #fafafa);
+}
+nav {
+  display: flex;
+}
+a {
+  font-style: None;
+  text-decoration: None;
+  font-weight: bold;
+  color: black;
+  padding: 10px;
+  text-transform: uppercase;
+}
+a:hover {
+  color: #fafafa;
+  font-size: larger;
+}
+.parent {
+  padding: 10vh;
+  min-height: auto;
+}
+h2 {
+  padding: 2vh;
+  font-size: 40;
+}
+.welcome {
+  font-family: Poppins;
+  font-weight: 800;
+  font-size: 4.5vw;
+  text-transform: uppercase;
+}
+.child1 {
+  padding-top: 2vh;
+  padding-left: 2vh;
+  padding-right: 10vh;
+  padding-bottom: 10vh;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+
+img {
+  padding-top: 12vh;
+  height: 40vh;
+  float: right;
+  padding: None;
+}
+.parent1 {
+  display: flex;
+}
+.child11 {
+  width: 60%;
+}
+.child12 {
+  width: 30%;
+}
+h1 {
+  font-family: "Montserrat Medium";
+  max-width: 40ch;
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+thead {
+  font-weight: bold;
+}
+table {
+  border-style: groove;
+  border-radius: 5px;
+}
+td {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #838181;
+  padding: 5px;
+}
