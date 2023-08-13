@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <title>Student Mark Entry Form</title>
+    <link rel="stylesheet" href="./../css/cgpa.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <h3>STUDENT CGPA CALCULATION FORM</h3>
+        <form onsubmit="handleSubmit(event)">
+          <p>Select the Register Number to Enter mark</p>
+          <select id="regnumInput">
+            <option value="">Choose the Register Number</option>
+            <option value="2231MCA001">2231MCA001</option>
+            <option value="2231MCA002">2231MCA002</option>
+            <option value="2231MCA003">2231MCA003</option>
+            <option value="2231MCA004">2231MCA004</option>
+            <option value="2231MCA005">2231MCA005</option>
+            <option value="2231MBA001">2231MBA001</option>
+            <option value="2231MBA002">2231MBA002</option>
+            <option value="2231MBA003">2231MBA003</option>
+            <option value="2231MBA004">2231MBA004</option>
+            <option value="2231MBA005">2231MBA005</option>
+          </select>
+          <br />
+          <br />
+          <button onclick="getname()">Get Details</button>
+          <h4>Enter the marks for</h4>
+          <h2 id="displayname"></h2>
+          <h4 id="displaydep"></h4>
+
+          <br />
+          <br />
+
+          <div class="mark">
+            <div class="sub">
+              <p>DMC6211</p>
+            </div>
+            <div class="enter">
+              <input type="number" id="sub1" placeholder="Marks for DMC6211" />
+            </div>
+          </div>
+          <div class="mark">
+            <div class="sub">
+              <p>DMC6212</p>
+            </div>
+            <div class="enter">
+              <input type="number" id="sub2" placeholder="Marks for DMC6212" />
+            </div>
+          </div>
+          <div class="mark">
+            <div class="sub">
+              <p>DMC6213</p>
+            </div>
+            <div class="enter">
+              <input type="number" id="sub3" placeholder="Marks for DMC6213" />
+            </div>
+          </div>
+          <div class="mark">
+            <div class="sub">
+              <p>DMC6214</p>
+            </div>
+            <div class="enter">
+              <input type="number" id="sub4" placeholder="Marks for DMC6214" />
+            </div>
+          </div>
+          <div class="mark">
+            <div class="sub">
+              <p>DMC6215</p>
+            </div>
+            <div class="enter">
+              <input type="number" id="sub5" placeholder="Marks for DMC6215" />
+            </div>
+          </div>
+          <div class="cont-button">
+            <button onclick="calculateTotal()">CALCULATE CGPA</button>
+          </div>
+        </form>
+
+        <div id="result"></div>
+      </div>
+    </div>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+      }
+      const names = {
+        "2231MCA001": "Keerthika",
+        "2231MCA002": "Sivaranjani",
+        "2231MCA003": "DeviSri",
+        "2231MCA004": "Vintha",
+        "2231MCA005": "Pooja",
+        "2231MBA001": "Deepika",
+        "2231MBA002": "Archana",
+        "2231MBA003": "Ester",
+        "2231MBA004": "Anu",
+        "2231MBA005": "Viji",
+      };
+
+      const dep = {
+        "2231MCA001": "Master of Computer Applications",
+        "2231MCA002": "Master of Computer Applications",
+        "2231MCA003": "Master of Computer Applications",
+        "2231MCA004": "Master of Computer Applications",
+        "2231MCA005": "Master of Computer Applications",
+        "2231MBA001": "Master of Buisness Administrations",
+        "2231MBA002": "Master of Buisness Administrations",
+        "2231MBA003": "Master of Buisness Administrations",
+        "2231MBA004": "Master of Buisness Administrations",
+        "2231MBA005": "Master of Buisness Administrations",
+      };
+      function getname() {
+        const regnum = document.getElementById("regnumInput").value;
+        const name = names[regnum];
+        const department = dep[regnum];
+        if (name) {
+          document.getElementById("displayname").innerHTML = `${name}`;
+          document.getElementById("displaydep").innerHTML = `${department}`;
+        } else {
+          document.getElementById("displayname").innerHTML =
+            "Please select the number";
+        }
+      }
+      function calculateTotal() {
+        try {
+          var sub1 = parseFloat(document.getElementById("sub1").value);
+          var sub2 = parseFloat(document.getElementById("sub2").value);
+          var sub3 = parseFloat(document.getElementById("sub3").value);
+          var sub4 = parseFloat(document.getElementById("sub4").value);
+          var sub5 = parseFloat(document.getElementById("sub5").value);
+        } catch (err) {
+          console.log(err);
+        }
+
+        var total = sub1 + sub2 + sub3 + sub3 + sub4 + sub5;
+        var total_marks = 500;
+        var per = (total / total_marks) * 100;
+        var cgpa = per / 9.5;
+
+        document.getElementById(
+          "result"
+        ).innerHTML = `Calculated CGPA : ${cgpa}`;
+      }
+    </script>
+  </body>
+</html>
